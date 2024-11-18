@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\ChatController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -16,7 +17,5 @@ Route::middleware('auth')->group(function () {
     Route::post('/message', [MessageController::class, 'sendMessage'])->name('message.send');
     Route::get('/fetch-messages/{userId}', [MessageController::class, 'fetchMessages']);
 
-
 });
-
 require __DIR__.'/auth.php';

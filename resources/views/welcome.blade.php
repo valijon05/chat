@@ -9,7 +9,7 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', Arial, sans-serif;
     }
 
     body {
@@ -17,213 +17,290 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background: linear-gradient(135deg, #74b9ff, #a29bfe);
-      overflow: hidden;
+      background: linear-gradient(135deg, #000000, #6c757d);
+      color: #ffffff;
+      flex-direction: column;
     }
 
     .navbar {
       width: 100%;
-      padding: 1rem;
-      background-color: #2d3436;
+      background: linear-gradient(135deg, #0056b3, #007bff);
+      padding: 15px 20px;
       color: #ffffff;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: fixed;
-      top: 0;
-      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
     .navbar .brand {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       font-weight: bold;
-      color: #ffeaa7;
+    }
+
+    .navbar .nav-links {
+      display: flex;
+      gap: 20px;
     }
 
     .navbar .nav-links a {
-      color: #dfe6e9;
+      color: #ffffff;
       text-decoration: none;
-      margin-left: 1rem;
-      font-weight: bold;
+      font-size: 1.1rem;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .navbar .nav-links a:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.05);
     }
 
     .chat-container {
       display: flex;
-      flex-direction: column;
-      width: 80%;
-      max-width: 1200px;
+      width: 90%;
       height: 80vh;
-      margin-top: 5rem;
+      background: #ffffff;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
-      background: #ffffff;
-    }
-
-    .chat-content {
-      display: flex;
-      height: 100%;
     }
 
     .user-list {
-      width: 25%;
-      background: #f5f6fa;
-      padding: 1rem;
-      border-right: 1px solid #dcdde1;
+      width: 30%;
+      background: #f9f9f9;
+      border-right: 2px solid #ddd;
       overflow-y: auto;
     }
 
     .user {
       padding: 15px;
       cursor: pointer;
-      border-radius: 8px;
-      margin-bottom: 10px;
-      background: #dfe6e9;
-      transition: 0.3s;
+      border-bottom: 1px solid #e0e0e0;
+      transition: all 0.3s ease-in-out;
     }
 
     .user:hover {
-      background-color: #b2bec3;
+      background: #f0f8ff;
+    }
+
+    .user.active {
+      background: #e6f7ff;
+      border-left: 4px solid #ff001e;
     }
 
     .user h4 {
-      color: #2d3436;
       font-size: 1rem;
       font-weight: bold;
+      color: #333;
+    }
+
+    .user p {
+      font-size: 0.9rem;
+      color: #666;
     }
 
     .chat-window {
-      width: 75%;
+      width: 70%;
       display: flex;
       flex-direction: column;
-      background-color: #dfe6e9;
+      background: #ffffff;
     }
 
     .chat-header {
-      padding: 1rem;
-      background-color: #2d3436;
+      padding: 20px;
+      background: linear-gradient(135deg, #050505, #0056b3);
       color: #ffffff;
+      font-size: 1.2rem;
       font-weight: bold;
       text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     .chat-messages {
       flex: 1;
-      padding: 1rem;
+      padding: 20px;
       overflow-y: auto;
-      background: #ffffff;
+      background: #f8f9fa;
     }
 
     .message {
-      margin: 10px 0;
+      margin-bottom: 20px;
       display: flex;
+      flex-direction: column;
     }
 
     .message.sent {
-      justify-content: flex-end;
-    }
-
-    .message.received {
-      justify-content: flex-start;
+      align-items: flex-end;
     }
 
     .message p {
-      padding: 10px 15px;
-      border-radius: 15px;
       max-width: 70%;
+      padding: 12px 18px;
+      border-radius: 20px;
       font-size: 0.95rem;
-      box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+      line-height: 1.5;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     .message.sent p {
-      background-color: #74b9ff;
+      background: linear-gradient(135deg, #007bff, #0056b3);
       color: #ffffff;
+      border-bottom-right-radius: 6px;
     }
 
     .message.received p {
-      background-color: #dfe6e9;
-      color: #2d3436;
+      background: #e9ecef;
+      color: #333;
+      border-bottom-left-radius: 6px;
     }
 
     .message-input {
-      padding: 1rem;
+      padding: 15px;
       display: flex;
-      background-color: #2d3436;
+      border-top: 2px solid #ddd;
+      background: #f8f9fa;
     }
 
     .message-input input[type="text"] {
       flex: 1;
-      padding: 10px;
+      padding: 12px;
       font-size: 1rem;
-      border: none;
+      border: 2px solid #ddd;
       border-radius: 8px;
-      margin-right: 10px;
       outline: none;
-      background: #ffffff;
-      color: #2d3436;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .message-input input[type="text"]:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
     }
 
     .message-input button {
-      padding: 10px 20px;
+      padding: 12px 20px;
+      margin-left: 12px;
       font-size: 1rem;
       color: #ffffff;
-      background-color: #74b9ff;
+      background: linear-gradient(135deg, #000000, #0056b3);
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      transition: 0.3s;
+      transition: all 0.3s ease-in-out;
     }
 
     .message-input button:hover {
-      background-color: #0984e3;
+      background: linear-gradient(135deg, #0056b3, #003f7d);
+      transform: scale(1.05);
     }
+
   </style>
 </head>
 <body>
-<!-- NavBar -->
-<div class="navbar">
-  <div class="brand">Chat App</div>
-  <div class="nav-links">
-    <a href="{{ route('login') }}">Login</a>
-    <a href="{{ route('register') }}">Register</a>
-  </div>
-</div>
 
-<!-- Chat Container -->
 <div class="chat-container">
-  <div class="chat-content">
-    <div class="user-list">
-      @foreach ($users as $user)
-        <div class="user">
+
+  <div class="user-list">
+    @foreach ($users as $user)
+      <a href="/chat/{{ $user->id }}" class="user-link" id="user-{{ $user->id }}">
+        <div class="user {{ isset($selectedUser) && $selectedUser->id == $user->id ? 'active' : '' }}">
           <h4>{{ $user->name }}</h4>
           <p>{{ $user->last_message ?? 'No messages yet' }}</p>
+        </div>
+      </a>
+    @endforeach
+  </div>
+
+
+  <div class="chat-window">
+    <div class="chat-header" id="chat-header">
+      Chat with {{ $selectedUser->name ?? 'a user' }}
+    </div>
+    <div class="chat-messages" id="chat-messages">
+      @foreach ($messages as $message)
+        <div class="message {{ $message->sender_id == auth()->id() ? 'sent' : 'received' }}">
+          <p>{{ $message->content }}</p>
         </div>
       @endforeach
     </div>
 
-    <div class="chat-window">
-      <div class="chat-header">
-        Chat with {{ $selectedUser->name ?? 'a user' }}
-      </div>
 
-      <div class="chat-messages">
-        @foreach ($messages as $message)
-          <div class="message {{ $message->sender_id == auth()->id() ? 'sent' : 'received' }}">
-            <p>{{ $message->content }}</p>
-          </div>
-        @endforeach
-      </div>
-
+    <form action="/message" method="post" id="message-form">
+      @csrf
+      <input type="hidden" name="user_id" value="{{ $selectedUser->id }}">
       <div class="message-input">
-        <form action="/message" method="post">
-          @csrf
-          <input type="hidden" name="user_id" value="{{ $selectedUser->id }}">
-          <input type="text" name="message" placeholder="Type a message..." required>
-          <button type="submit">Send</button>
-        </form>
+        <input type="text" id="message" name="message" placeholder="Type a message..." required>
+        <button type="submit">Send</button>
       </div>
-    </div>
+    </form>
   </div>
 </div>
+
+<script>
+  $(function() {
+    let lastMessageId = 0;
+
+    $('#message-form').submit(function(e) {
+      e.preventDefault();
+
+      const message = $('#message').val().trim();
+      const userId = '{{ $selectedUser->id }}';
+
+      if (!message) return alert('Iltimos, xabar kiriting.');
+
+      $.post('/message', {
+        message,
+        user_id: userId,
+        _token: '{{ csrf_token() }}'
+      }).done(response => {
+        $('#message').val('');
+        updateMessages(response.messages);
+      }).fail(() => console.error('Xabar yuborishda xato'));
+    });
+
+    function updateMessages(messages) {
+      const container = $('#chat-messages').empty();
+      messages.forEach(message => {
+        const isSent = message.sender_id == {{ auth()->id() }};
+        container.append(`<div class="message ${isSent ? 'sent' : 'received'}">
+                                  <p>${message.content}</p>
+                                </div>`);
+
+        if (message.id > lastMessageId) {
+          lastMessageId = message.id;
+          showNotification(message.content);
+          playSound();
+        }
+      });
+    }
+
+    function fetchMessages() {
+      const userId = '{{ $selectedUser->id }}';
+      $.get(`/messages/${userId}`).done(response => updateMessages(response.messages)).fail(() => console.error('Xabarlar olishda xato'));
+    }
+
+    setInterval(fetchMessages, 5000);
+
+    function showNotification(message) {
+      if (Notification.permission === 'granted') {
+        new Notification('Yangi xabar', { body: message });
+      } else if (Notification.permission !== 'denied') {
+        Notification.requestPermission().then(permission => {
+          if (permission === 'granted') {
+            new Notification('Yangi xabar', { body: message });
+          }
+        });
+      }
+    }
+
+    function playSound() {
+      const sound = new Audio('{{ asset("sounds/notification.mp3") }}');
+      sound.play();
+    }
+  });
+</script>
+
+
 </body>
 </html>
